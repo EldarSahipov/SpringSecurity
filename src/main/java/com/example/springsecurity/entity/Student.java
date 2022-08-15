@@ -16,10 +16,11 @@ import javax.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
     private int id;
 
+    @Column
     private String name;
 
     @Column
@@ -28,6 +29,6 @@ public class Student {
     @Column(unique = true)
     private String email;
 
-    @Column
-    private String personalInformation;
+    @Column(name = "personal")
+    private String personal;
 }
